@@ -22,10 +22,8 @@ function Main({ className }) {
  
    
     return (
-        isMobile ? (
-        <div className={`${className} ${darkPortfolio ? "dark" : ""}`}
-        onClick={isMobile ? handleClick : null} 
-        >
+        <div className={`${className} ${darkPortfolio ? "dark" : ""} ${isMobile ? "mobile" : ""}`}>
+          <div className={` project-wrapper-scale ${isMobile ? "mobile" : ""}`}>
             <Profile />
             <About />
             <div id="project">
@@ -33,21 +31,12 @@ function Main({ className }) {
             </div>
             <Contact />
             <Footer />
-          </div>
-        ) : (
-          <div className={`${className} ${darkPortfolio ? "dark" : ""}`}>
-            <div className="project-wrapper-scale">
-              <Profile />
-              <About />
-              <div id="project">
-                <Outlet />
-              </div>
-              <Contact />
-              <Footer />
-            </div>
-          </div>
-        )
-      );
+        </div>
+        {isMobile && (
+        <div className="mobile-overlay" />
+      )}
+        </div>
+       );
 }
 
 export default Main

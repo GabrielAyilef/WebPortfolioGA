@@ -26,12 +26,23 @@
   padding: 0;
  
 }
-
+.main-portfolio.mobile{
+  width:100vw;
+  margin:0 auto;
+  padding-top: 4rem;
+  padding-inline:0 ;
+}
 .main-portfolio.sidebar-closed{
   margin-left:80px ;
   width: calc(100vw - 80px);
   padding-bottom: 150px;
   overflow: visible; 
+}
+.main-portfolio.sidebar-closed.mobile{
+  margin-left:0 ;
+  width: 100vw;
+  padding-bottom: 70px;
+  overflow: hidden; 
 }
 .main-portfolio.dark{
   background-color: #222b40;
@@ -57,7 +68,13 @@
    max-height: 100vh;
    overflow: hidden; 
 }
+.mobile #project{
+  min-height: none;
+  overflow: visible;
+  max-height: none;
+  padding-top: 0;
 
+}
   .project-wrapper-scale{
   width: calc(100vw - 300px);
   margin:0 auto;
@@ -71,28 +88,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.project-wrapper-scale.mobile{
+  width: 100vw;
+  transform: none;
+
+}
 .main-portfolio.sidebar-closed .project-wrapper-scale{
   transform: scale(1.05);
 }
-
-
- @media (max-width: 768px){
-
-  .main-portfolio{
-    width:100vw;
-    margin:0 auto;
-    padding-top: 4rem;
-    padding-inline:0 ;
-  }
-  .main-portfolio.sidebar-closed{
-    margin-left:0 ;
-    width: 100vw;
-    padding-bottom: 70px;
-    overflow: hidden; 
-  }
-  
-
-  .main-portfolio::before {
+.main-portfolio.sidebar-closed .project-wrapper-scale.mobile{
+  transform: none;
+}
+/* 
+  .main-portfolio.mobile::before{
     content: '';
     position: absolute;
     top: 0;
@@ -100,25 +108,37 @@
     width: 100%;
     height: 100%;
     backdrop-filter: blur(4px);
-    z-index: 9999;
+    z-index: 100;
     pointer-events: auto;
     background: none;
-  }
-  .main-portfolio.sidebar-closed::before{
+  } */
+  .main-portfolio.sidebar-closed.mobile::before{
       display: none;
   }
-  .main-portfolio.dark::before {
+  /* .main-portfolio.dark.mobile::before {
   opacity: 1;
-  }
-  #project{
-    min-height: none;
-    overflow: visible;
-    max-height: none;
-    padding-top: 0;
+  } */
  
-  }
 
-} 
+  .mobile-overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    pointer-events: auto; /* Esto permitirá los clics en la overlay */
+  }
+  
+  .main-portfolio.mobile .mobile-overlay {
+    display: block; /* Muestra la capa de overlay */
+  }
+  
+  .main-portfolio.sidebar-closed.mobile .mobile-overlay {
+    display: none; /* Oculta la overlay cuando la sidebar está cerrada */
+  }
 
 
 
