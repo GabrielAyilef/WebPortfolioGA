@@ -13,12 +13,19 @@ function Main({ className }) {
     const { darkPortfolio } = useDarkMode()
     const {isMobile} = useMobile()
 
+  function handleClick(e) {
+    if (isMobile) {
 
+      e.stopPropagation();
+    }
+}
  
    
     return (
         isMobile ? (
-          <div className={`${className} ${darkPortfolio ? "dark" : ""}`}>
+        <div className={`${className} ${darkPortfolio ? "dark" : ""}`}
+        onClick={isMobile ? handleClick : null} 
+        >
             <Profile />
             <About />
             <div id="project">
