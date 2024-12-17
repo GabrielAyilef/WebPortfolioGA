@@ -5,10 +5,10 @@
   min-height: 96vh;
   width: 90%;
 }
-#about p{
+#about .section-header{
   color: #555555;
 }
-#about.dark p{
+#about.dark .section-header{
   color: #999999;
 }
    .section-about-container{
@@ -113,7 +113,11 @@
   .text-container{
     text-align: justify
   }
-  .text-container p{
+  .text-container .text-container-paragraph{
+    color: rgb(85, 85, 85, 0);
+    transition: color 0.7s ease 1.5s;
+  }
+  .dark .text-container p{
     color: rgb(153, 153, 153, 0);
     transition: color 0.7s ease 1.5s;
   }

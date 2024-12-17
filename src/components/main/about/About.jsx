@@ -10,45 +10,31 @@ function About() {
   
   const { darkPortfolio } = useDarkMode()
   const textRef = useRef(null)
-  const iconRef = useRef(null)
   
-  useEffect(() => {
-    const createObserver = (targetRef, className) => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            if (targetRef.current) {
-              targetRef.current.classList.add(className);
+  
+  
+   useEffect(() => {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (textRef.current && entry.isIntersecting) {
+              textRef.current.classList.add("visible");
+            } else if (textRef.current) {
+              textRef.current.classList.remove("visible");
             }
-          } else {
-            if (targetRef.current) {
-              targetRef.current.classList.remove(className);
-            }
+          },
+          { threshold: 0.2 }
+        );
+    
+        if (textRef.current) {
+          observer.observe(textRef.current);
+        }
+    
+        return () => {
+          if (textRef.current) {
+            observer.unobserve(textRef.current);
           }
-        },
-        { threshold: 0.2 }
-      );
-
-      if (targetRef.current) {
-        observer.observe(targetRef.current);
-      }
-
-      return observer;
-    };
-
-    const textObserver = createObserver(textRef, "visible");
-    const iconObserver = createObserver(iconRef, "visible");
-
-    return () => {
-      // Limpiar los observers cuando el componente se desmonte
-      if (textRef.current) {
-        textObserver.unobserve(textRef.current);
-      }
-      if (iconRef.current) {
-        iconObserver.unobserve(iconRef.current);
-      }
-    };
-  }, []);
+        };
+      }, []);
 
   return (
     <div id="about" className={`${darkPortfolio ? "dark" : ""}`}>
@@ -60,14 +46,14 @@ function About() {
         </div>
         <div className="about-text-container">
         <div className= "text-container" ref={textRef}>
-            <p>
+            <p className='text-container-paragraph'>
               After years in the yoga scene, I’m making the move to frontend development, particularly excited by 
               the ability to <span>bring ideas to life</span> through interactive interfaces. Now, my attention to detail, {} 
               <span> creativity</span>, and adaptability are focused on <span>user experiences</span>. Frontend draws me because of the <span>endless 
               possibilities</span> and tools available to navigate challenges and create effective solutions.
             </p>
           </div>
-          <div className="about-containers" ref={iconRef}>
+          <div className="about-containers" >
             <div className="details">
               <div className='icon-about-container'>
                  <img src={experience}  alt=""/>  
