@@ -102,7 +102,7 @@
     backdrop-filter: blur(4px);
     z-index: 100;
     pointer-events: auto;
-    background: none;
+    background: rgba(255, 255, 255, 0); /* Agregar un fondo transparente */
   }
   .main-portfolio.sidebar-closed::before{
       display: none;
