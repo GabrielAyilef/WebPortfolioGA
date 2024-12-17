@@ -1,0 +1,144 @@
+.NavBar {
+  width: 100%;
+  z-index: 100;
+  background-color: #fff;
+  padding: 0.625rem;
+  box-shadow: 0 -2px 4px rgba(67, 15, 71, 0.1);
+  position: sticky;
+  bottom: 0; 
+  height: 70px; 
+  margin: 0;
+}
+.NavBar.dark{
+  background-color: #171f1d;
+  color: #918E9B;
+  box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.25);
+}
+.NavBar a {
+  text-decoration: none;
+  color: rgb(107, 40, 107);
+  text-shadow: 1px 1px 2px rgba(72, 9, 70, 0.1);
+}
+.NavBar.dark a{
+  color: #bbb8c4;
+}
+.icons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+.icon-container {
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.1s ease;
+}
+.icon-container:hover{
+  transform: scale(1.1); 
+}
+.icon-container-link p{
+ color: black;
+}
+.NavBar.dark .icon-container-link p,.NavBar.dark .icon-container p{
+  color: #918E9B;
+ }
+.icon-container p {
+  font-size: 0.6rem;
+  padding-top: 2px;
+  color: black;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+
+.practice-dropdown,
+.info-dropdown {
+  position: absolute;
+  z-index: 100;
+  width: 120px;
+  bottom: calc(100% + 10px); 
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(77, 21, 71, 0.3);
+}
+.NavBar.dark .practice-dropdown,
+.NavBar.dark .info-dropdown{
+  background-color: #282D35;
+  color: #918E9B;
+  box-shadow: 0 1px 4px rgb(255, 255, 255,0.2);
+}
+.practice-dropdown ul,
+.info-dropdown ul{
+  list-style-type: none;
+ 
+}
+
+
+.info-dropdown ul li{
+  padding-left: 2rem;
+  padding-block: 0.5rem;
+  cursor: pointer;
+  display: block;
+  font-size: 0.8rem;
+}
+
+.practice-dropdown ul li a,
+.info-dropdown ul li a{
+  padding: 0.5em 0.8em;
+  cursor: pointer;
+  display: block;
+  font-size: 0.8rem;
+}
+
+
+.practice-dropdown ul a:hover,
+.info-dropdown ul a:hover,.info-dropdown ul li:hover {
+  background-color: #f0f0ff; 
+  transform: none;
+  border-radius: 5px;
+}
+.NavBar.dark .practice-dropdown ul a:hover,
+.NavBar.dark .info-dropdown ul a:hover, .NavBar.dark .info-dropdown ul li:hover {
+background-color: #3f3f58;
+  color: white;
+}
+
+
+.NavBar.desktop{
+      z-index: 50;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 73%;
+      margin: 0 auto;
+      border-inline: none;
+      box-shadow: none;
+      position: absolute;
+  }
+  .NavBar.dark.desktop{
+    box-shadow: none;
+    
+  }
+  .NavBar.desktop .icon-container{
+    padding-top: 5px;
+  }
+ 
+  .NavBar.desktop .info-dropdown{
+    top: calc(100% + 10px);
+    height: 165px;
+  }
+  .NavBar.desktop .practice-dropdown{
+  top: calc(100% + 10px);
+  height: 120px;
+}
+.NavBar.desktop .icon-home{
+  display: none;
+}

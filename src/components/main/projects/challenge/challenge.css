@@ -1,0 +1,61 @@
+.container-challenge {
+    width: 100%;
+    /* padding-block: 1rem; */
+    overflow: hidden;
+    height: 100%;
+    flex: 1;
+    align-self: stretch;
+    object-fit: cover;
+    background-color:white;
+    position: relative;
+    transition: transform 0.1s ease;
+    /* border: 2px solid green; */
+}
+
+
+.challenge-background {
+    width: 100%; 
+    padding-top: 66%; /*padding trick*/
+    position: relative;
+    overflow: hidden;
+    background-image: url(../../../../assets/bgchallenge.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.challenge-background::before{
+    content: "";
+    position: absolute;
+    inset:0;
+    background: linear-gradient(90deg, hsla(185, 64%, 51%, 0.3) 0%, hsla(277, 74%, 24%, 0.3) 100%);
+    background: -moz-linear-gradient(90deg, hsla(185, 64%, 51%, 0.3) 0%, hsla(277, 74%, 24%, 0.3) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(185, 64%, 51%, 0.3) 0%, hsla(277, 74%, 24%, 0.3) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#30C5D2", endColorstr="#471069", GradientType=1 );
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    pointer-events: none;
+} 
+
+.img-challenge-container {
+    width: 250px;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0.5);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+  }
+  
+  .img-challenge-container.visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1.15);
+  }
+  

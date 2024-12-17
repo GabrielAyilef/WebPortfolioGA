@@ -1,0 +1,326 @@
+.sidebar{
+    background-color: rgb(77, 98, 147);
+    color: white;
+    padding-inline: 15px;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-evenly;
+    width:270px;
+    height: 100vh;
+    position: fixed;
+    z-index: 1000;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.sidebar.sidebar-closed{
+    width: 80px;
+}
+.sidebar.dark{
+    background-color: rgb(70, 89, 134);
+}
+.bx.bx-menu {
+    cursor: pointer;
+    position: fixed;
+    z-index: 50;
+    top: 20px;
+    transform: translateX(0);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.sidebar.sidebar-closed .bx.bx-menu {
+    transform: translateX(12px); 
+}
+.tooltip-menu {
+    position: fixed;
+    top:17px;
+    left: -100%;
+    opacity: 0; 
+    transition: opacity 0.5s ease, left 0.5s ease; 
+    background-color: rgb(189, 186, 186,0.1); 
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    white-space: nowrap; 
+  }
+  
+  .tooltip-active {
+    left: 50px; 
+    opacity: 1; 
+  }
+.sidebar-header{
+    margin-top: 50px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    padding: 20px 5px;
+    flex-direction: column;
+    cursor: pointer;
+   
+}
+
+.sidebar-header .user-img {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    transform: scale(1) translate(0, 0);
+    transition: transform 0.2s ease;
+}
+
+.sidebar.sidebar-closed .sidebar-header .user-img {
+    transform: scale(0.67) translate(-25%, -25%);
+}
+.sidebar-header .user-img img{
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    display: block;
+}
+
+.sidebar-header .user-name{
+    font-size: 0.8rem;
+    line-height: 1.5;
+    opacity: 1;
+    transition: opacity 2s ease, text-decoration 0.3s ease, transform 0.5s ease;;
+    overflow: hidden;
+    padding-bottom: 10px;
+    position: relative;
+    transform: translateX(0);
+}
+.sidebar.sidebar-closed .sidebar-header .user-name{
+    opacity: 0;
+    transform: translateX(-200%); 
+}
+
+.user-name.active{
+    text-decoration: underline;
+    text-underline-offset: 0.5rem; 
+    text-decoration-color: #F8B940; 
+    text-decoration-thickness: 2px
+}
+
+
+/*lists */ 
+.list-container{
+    overflow: hidden;
+}
+.list-container .list-item, .list-container .list-item-dropdown .project{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    position: relative;
+    width: 100%;
+    flex-wrap: nowrap;
+    line-height: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 30px;
+    color: white;
+    transition: background-color 0.3s ease, text-decoration 0.3s ease;
+
+}
+/* color para todos los links que haya en las listas */
+.list-container li a{
+    color: white;
+    text-decoration: none;
+}
+/* estilo para el Link en cuanto a diseño */
+.list-item-dropdown .link-dropdown{
+    display: flex;
+    align-items: center;
+}
+/* agregado al elemento para que la flecha chevrondown se separe de icono y span */
+.list-item-dropdown .project{
+    justify-content: space-between;
+}
+.list-item:hover, .project:hover, .dropdown-item:hover{
+    background-color: #546BA0;
+}
+.list-item.active, .list-item-dropdown.active .project span{
+    text-decoration: underline;
+    text-underline-offset: 0.5rem; 
+    text-decoration-color: #F8B940; 
+}
+/* columna para este elemento que tiene tanto el project como la ul que se abre */
+.list-item-dropdown{
+    display: flex;
+    flex-direction: column;
+}
+/* mantiene iconos absolute a 12px de la izquierda aun cuando se cierra */
+.list-item img, .list-item-dropdown .project .link-dropdown img{
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    line-height: 50px;
+    position: absolute;
+    left: 12px;
+}
+.sidebar.sidebar-closed .list-item img{
+    left: 12px;
+}
+
+/* estilos para los span de las 3 listas */
+.sidebar .list-item span, .list-item-dropdown .project .link-dropdown span {
+    opacity: 1;
+    transition: opacity 0.3s ease, left 0.3s ease;
+    position: relative;
+    left: 50px;
+}
+.list-item-dropdown .project .link-dropdown span{
+    display: flex;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, left 0.35s ease;
+}
+.sidebar.sidebar-closed .list-item span, .sidebar.sidebar-closed .list-item-dropdown .project span {
+    opacity: 0;
+    pointer-events: none; 
+    left: 110%;
+}
+
+.list-item-dropdown .bx-chevron-down{
+    position: relative; 
+    opacity: 1;
+    right: 10px;
+    font-size: 1.2rem;
+    transition: right 1s ease, rotate 0.5s ease, opacity 1s ease;
+}
+.rotate{
+    rotate: 180deg;
+}
+.sidebar.sidebar-closed .bx-chevron-down,.sidebar.sidebar-closed .bx-chevron-down.rotate{
+    right: -10px;
+    opacity:0 ;
+   
+}
+
+
+/*Dropdown*/
+.sidebar-dropdown  {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding-left: 0;
+    transition: opacity 0.5s ease, max-height 0.5s ease,padding-left 0.5s ease;
+}
+.sidebar-dropdown.sidebar-open  {
+    opacity: 1;
+    max-height: 700px; 
+    padding-left: 25px;
+}
+
+
+.dropdown-item{
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dropdown-item .dropdown-item-fixed img{
+    width: 1.5rem;
+    height: 1.3rem;
+    padding-left: 5px;
+    margin-right: 5px;
+}
+.dropdown-item span{
+    line-height: 1.5;
+    padding-block: 10px;
+}
+.dropdown-item-fixed{
+    display: flex;
+    align-items: center;
+}
+.sidebar.sidebar-closed .dropdown-item-fixed{
+    display: none;
+}
+.dropdown-item .sidebar-dropdown-buttons{
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.dropdown-item .sidebar-dropdown-buttons.mouse-active{
+    visibility: visible;
+    opacity: 1;
+}
+.dropdown-item .sidebar-dropdown-buttons i{
+    font-size: 1rem;
+    margin:5px;
+    transition: transform 0.1s ease;
+}
+.dropdown-item .sidebar-dropdown-buttons i:hover{
+    transform: scale(1.2); 
+}
+.sidebar.sidebar-closed .sidebar-dropdown-buttons{
+    display: none;
+}
+.dropdown-item .dropdown-link{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dropdown-item .dropdown-link .sidebar-dropdown-buttons span{
+padding-left: 45px;
+}
+
+.sidebar-dropdown li span{
+    font-size: 0.8rem;
+}
+
+.sidebar-footer {
+    display: flex;
+    justify-content: center;
+    margin: auto auto 30px;
+}
+  .sidebar-footer .bx-sun,.sidebar-footer .bx-moon{
+
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar-footer .bx-sun:hover,.sidebar-footer .bx-moon:hover{
+    animation: rotarIcono 2s infinite linear;
+    cursor: pointer;
+  }
+  @keyframes rotarIcono {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @keyframes agrandarBoton {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  .boton {
+    animation: agrandarBoton 0.5s ease-in-out;}
+
+    @media (max-width: 768px){
+        .sidebar{
+            background-color: rgb(77, 98, 147, 0.95);
+        }
+        .sidebar.dark{
+           background-color: rgb(70, 89, 134, 0.95);
+        
+        }
+          
+        .sidebar.sidebar-closed{
+            width: 0;
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar.sidebar-closed .bx.bx-menu{
+            color: black;
+        }
+        .sidebar.sidebar-closed .sidebar-header .user-img{
+            width: 0;
+            height: 0;
+        }
+        .sidebar.sidebar-closed .list-container i, .sidebar.sidebar-closed .sidebar-footer i{
+            display: none;
+
+        }
+        .sidebar.sidebar-closed.dark .bx.bx-menu{
+            color: white;
+        }
+      
+    }

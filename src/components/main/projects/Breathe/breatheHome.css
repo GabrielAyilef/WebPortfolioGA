@@ -1,0 +1,126 @@
+
+.body-breath-home {
+    width: 100%;
+    /* padding-block: 23%; */
+    overflow: hidden;
+    /* max-height: 100%; */
+    padding-block:12%; /*padding trick*/
+    flex: 1;
+  align-self: stretch;
+  object-fit: cover;
+    position: relative;
+    background-image: url('../../../../assets/bgbreath.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .body-breath-home{
+   
+    width: 100%; 
+    
+    position: relative;
+    overflow: hidden;
+  }
+  .container-breathe-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: 70px;
+    width: 70px;
+    position: relative;
+    transform: scale(1);
+    z-index: 3;
+  }
+  
+  .circle-home {
+    background-color: #010f1c;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .breathe-home-text {
+    color: white;
+    font-size: 0.5rem;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .gradient-circle-home {
+    background: conic-gradient(
+      #55b7a4 0%,
+      #4ca493 40%,
+      #fff 40%,
+      #fff 60%,
+      #336d62 60%,
+      #2a5b52 100%
+    );
+    height: 75px;
+    width: 75px;
+    z-index: -2;
+    border-radius: 50%;
+    position: absolute;
+    top: -2.5px;
+    left: -2.5px;
+  }
+  
+  .pointer-container-home {
+    position: absolute;
+    top: -9.33px;
+    left: 33.67px;
+    width: 2px;
+    height: 44.33px;
+    transform-origin: bottom center;
+  
+  }
+  
+  .pointer-container-home.grow-home {
+    animation: rotate-pointer 2s ease-in-out forwards;
+    scale: scale(1);
+  }
+  
+  @keyframes rotate-pointer {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(130deg);
+    }
+  }
+  .pointer-wrapper-home {
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     
+      }
+  
+  .pointer-home {
+    background-color:white;
+    border-radius: 50%;
+    height: 4px;
+    width: 4px;
+    display: block;
+    padding: 5px;
+  }
+  
+  .container-breathe-home.grow-home {
+    animation: grow-container 2s ease-in-out forwards;
+  }
+  
+  @keyframes grow-container {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.4);
+    }
+  }
+   

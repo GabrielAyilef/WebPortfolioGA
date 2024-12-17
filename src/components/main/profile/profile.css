@@ -1,0 +1,158 @@
+#profile{
+   display: flex;
+    justify-content: center;
+    gap: 5rem;
+    padding-top: 4vh;
+    height: 96vh;
+    margin: 0 10rem;
+    /* height: 100vh; */
+    max-height: 100vh;
+    position: relative;
+    width: 90vw;
+  }
+  .profile-pic{
+    width: 400px;
+    height: 400px;
+    align-self: center;
+  }
+  .profile-pic img{
+    width: 100%;
+    border-radius: 50%;
+  }
+  .text-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+  }
+ 
+
+  .text-section p {
+    font-weight: 600;
+    color: #555555;
+  }
+
+  .section-header {
+    text-align: center;
+  }
+  .title {
+    font-size: 3rem;
+    text-align: center;
+    color: #3f5078;
+    margin-block: 1rem;
+  }
+  .dark .title{
+    color: #fcdfd8
+  }
+  .dark .text-section p{
+    color: #999999
+  }
+  .subtitle {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+  .btn-container button{
+      font-weight: 600;
+      width: 8rem;
+      transition: all 300ms ease;
+      padding: 1rem;
+      border-radius: 2rem;
+      border: #3f5078 0.1rem solid;
+  }
+
+  .social-container{
+    display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      gap: 1rem;
+  }
+  .social-container button{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 4px 6px rgb(63, 80, 120, 0.4);
+    transition: transform 1s ease-in-out;
+  }
+  .social-container.visible button{
+    transform: rotate(360deg);
+  }
+  .social-container button:hover{
+    animation: agrandarBoton 0.5s ease-in-out;
+  }
+
+  .dark .social-container button{
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .social-container button .icon{
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .btn-info:hover,
+  .btn-cv:hover {
+    cursor: pointer;
+  }
+
+  .btn-info,
+  .btn-cv:hover {
+    background: #3f5078;
+    color: white;
+  }
+
+  .btn-info:hover {
+    background: #222b40;
+  }
+
+  .btn-cv {
+    background: none;
+    color:#222b40;
+  }
+  .dark .btn-cv{
+    color: white;
+  } 
+  .btn-cv:hover {
+    border: rgb(255, 255, 255) 0.1rem solid;
+  }
+ 
+  @keyframes agrandarBoton {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  @media (max-width: 768px){
+  #profile {
+    min-height: 96vh;
+    height: 83vh;
+    margin: 0 5%;
+    display: block;
+    padding-top: 4rem;
+  }
+  .profile-pic{
+    width: 220px;
+    height:auto;
+    justify-content: center;
+    margin: 0 auto 2rem;
+
+    }
+  .title {
+      font-size: 2rem;
+    }
+
+  .subtitle {
+      font-size: 1.25rem;
+    }
+ }

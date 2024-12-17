@@ -1,0 +1,135 @@
+.body-breath {
+  color: #fff;
+  height:  calc(100% - 140px);
+  overflow: hidden;
+  background-image: url('../../../../../assets/breathe.JPG');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation: fadeIn 3s ease-in-out forwards;
+  position: relative;
+  z-index: 0;
+  padding-top:50px;
+}
+
+.body-breath.desktop{
+  height:  calc(100% - 70px);
+}
+.body-breath::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(185, 64%, 51%, 1);
+  background: linear-gradient(90deg, hsla(185, 64%, 51%, 0.3) 0%, hsla(277, 74%, 24%, 0.3) 100%);
+  background: -moz-linear-gradient(90deg, hsla(185, 64%, 51%, 0.3) 0%, hsla(277, 74%, 24%, 0.3) 100%);
+  background: -webkit-linear-gradient(90deg, hsla(185, 64%, 51%, 0.3) 0%, hsla(277, 74%, 24%, 0.3) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#30C5D2", endColorstr="#471069", GradientType=1 );
+  z-index: 1;
+}
+
+.container-breathe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 15.63rem; 
+  width: 15.63rem; 
+  position: relative;
+  transform: scale(1);
+  z-index: 3;
+}
+
+.circle {
+  background-color: #010f1c;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.gradient-circle {
+  background: conic-gradient(
+    #55b7a4 0%,
+    #4ca493 40%,
+    #fff 40%,
+    #fff 60%,
+    #336d62 60%,
+    #2a5b52 100%
+  );
+  height: 16.67rem; /* 20rem * 0.833 */
+  width: 16.67rem;
+  z-index: -2;
+  border-radius: 50%;
+  position: absolute;
+  top: -8.33px; 
+  left: -8.33px; 
+}
+
+.pointer {
+  background-color: #fff;
+  border-radius: 50%;
+  height: 16.67px;
+  width: 16.67px;
+  display: block;
+}
+
+.pointer-container {
+  position: absolute;
+  top: -33.33px; 
+  left: 116.67px; 
+  width: 16.67px; 
+  height: 158.33px; 
+  animation: rotate 7.5s linear forwards infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container-breathe.grow {
+  animation: grow 3s linear forwards;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.4); 
+  }
+}
+
+.container-breathe.shrink {
+  animation: shrink 3s linear forwards;
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1.4);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px){
+  .body-breath{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding-top: 50px; */
+  }
+  }

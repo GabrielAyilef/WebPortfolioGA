@@ -1,0 +1,244 @@
+#about {
+  position: relative;
+  padding-top: 4vh;
+  height: 96vh;
+  min-height: 96vh;
+  width: 90%;
+}
+#about p{
+  color: #555555;
+}
+#about.dark p{
+  color: #999999;
+}
+   .section-about-container{
+    display: flex;
+    gap: 4rem;
+    margin-top: 2rem;
+  }
+  .about-pic{
+    display: flex;
+    flex: 1;
+    min-width: 200px;
+    max-width: 350px;
+    margin: auto 0;
+  }
+  .about-pic img{
+    width: 100%;
+    border-radius: 2rem;
+  }
+  .about-text-container{
+    flex:1;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    gap: 2rem;
+  
+  }
+  .about-containers{
+    display: flex;
+    gap: 1rem;
+  }
+  .details{
+    padding-top: 1rem;
+    flex: 1;
+    background-color: #f2f3f8;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: #3F5078;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .dark .details{
+    background: #222b40;
+  }
+
+  .article-container {
+    display: flex;
+    text-align: initial;
+    flex-direction: row;
+    gap: 2.5rem;
+    justify-content: space-around;
+  }
+  
+  article {
+    display: flex;
+    width: 10rem;
+    justify-content: space-around;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  .article-text{
+    flex:1
+   }
+
+ 
+
+  .details h2{
+    font-size: clamp(0.8rem, 1.2vw, 1.5rem)
+  }
+  article h3{
+    font-size: clamp(0.8rem, 1vw, 1rem);
+  }
+  article p{
+    color: #555555;
+    font-size: clamp(0.8rem, 0.8vw, 0.8rem)
+  }
+  .dark .details h2, .dark article h3, .dark article p{
+    color: #cfc3c3
+  }
+  
+  .icon-about-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    box-shadow: 2px 4px 6px rgb(63, 80, 120, 0.1);
+    cursor: default;
+  }
+  .icon-about-container img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: default;
+  }
+  .dark .icon-about-container{
+    box-shadow: none;
+  }
+ 
+  .text-container{
+    text-align: justify
+  }
+  .text-container p{
+    color: rgb(153, 153, 153, 0);
+    transition: color 0.7s ease 1.5s;
+  }
+  .text-container.visible p{
+    color: #555555;
+  }
+  .dark .text-container.visible p{
+    color: #999999;
+  } 
+
+  .text-container span {
+    color: #F8B940;
+    display: inline-block;
+    transform: scale(2) translateX(50px);
+    transition: transform 2s ease, opacity 2s ease;
+    transition-delay: 0s;
+    opacity: 1;
+    animation: none; 
+  }
+  .text-container.visible span{
+    transform: scale(1) translateX(0); 
+    animation: colorShiftLight 2s ease forwards;
+  }
+  .dark .text-container.visible span {
+    transform: scale(1) translateX(0); 
+    animation: colorShift 2s ease forwards; 
+  }
+  @keyframes colorShiftLight {
+    0% {
+      color: #F8B940;
+    }
+    33% {
+      color: #D4A85E;
+    }
+    66% {
+      color: #989797;
+    }
+    100% {
+      color: #555555; 
+    }
+  }
+
+  @keyframes colorShift {
+    0% {
+      color: #F8B940; 
+    }
+    33% {
+      color: #D4A85E;
+    }
+    66% {
+      color: #B8B8B8; 
+    }
+    100% {
+      color: #999999; 
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .section-about-container {
+      display: block;
+      height: fit-content;
+    }
+    #about{
+      height: auto;
+    min-height: 100vh;
+    }
+  }
+  @media (max-width: 768px){
+    #about{
+  
+      padding-bottom: 5rem;
+      
+    }
+    .section-about-container{
+      margin-top: 0;
+    }
+    .about-pic {
+      min-width: 100px;
+      width: 250px;
+      height: 250px;
+      margin: 0 auto 2rem;
+    }
+    .about-containers {
+      margin-top: 0;
+    }
+    .title {
+      font-size: 2rem;
+    }
+
+  .subtitle {
+      font-size: 1.25rem;
+    }
+ 
+  .about-containers{
+    flex-wrap: wrap;
+  }
+  .about-pic {
+    min-width: 100px;
+    width: 50%;
+    height: auto;
+    justify-content: center;
+    }
+  article {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  .article-container{
+    gap: 1rem;
+  }
+  .details{
+    padding: 1rem;
+  }
+
+  .text-container span{
+    transform: scale(2) translateX(-50px); 
+  }
+  .details h2{
+    font-size: 1rem
+  }
+  article h3{
+    font-size: 1rem;
+  }
+ .article-container .icon{
+  width: 25px;
+  height: 25px;
+ }
+
+  }

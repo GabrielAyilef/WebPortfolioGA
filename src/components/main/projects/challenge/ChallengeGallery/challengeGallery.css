@@ -1,0 +1,202 @@
+.challengeGallery-container {
+  /* min-height: 100vh;  */
+  height: 100%;
+max-height: 100%;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+.challengeGallery-container.desktop{
+  width: 600px;
+  margin-inline: auto;
+  /* margin-top: 90px; */
+  padding-block: 0;
+  border-radius: 5px;
+}
+.challengeGallery-container.desktop.dark{
+  box-shadow: 0 3px 8px rgba(165, 128, 157, 0.3);
+}
+.challengeGallery-header h1{
+  color: white;
+  font-size:1.5rem;
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    top:20%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    z-index: 2;
+}
+.challengeGallery-container.desktop .challengeGallery-header h1{
+  font-size:2rem;
+}
+.challengeGallery-header p{
+  position: absolute;
+    z-index: 4;
+    bottom: 0;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-size:1rem;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    padding: 1rem  0.31rem;
+}
+
+.challengeGallery-container.desktop .challengeGallery-header p{
+  font-size: 1.3rem;
+  width: 100%;
+}
+
+
+.challengeGallery-header img{
+  width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+.challengeGallery-container.desktop .challengeGallery-header img{
+  border-radius: 5px;
+}
+.challengeGallery-header{
+  position: relative;
+  z-index: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden; 
+}
+.challengeGallery-container.desktop .challengeGallery-header{
+  aspect-ratio: 21 / 9;
+}
+.challengeGallery-header::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: hsla(185, 64%, 51%, 1);
+  background: linear-gradient(90deg, hsla(185, 64%, 51%, 0.3) 0%, hsla(277, 74%, 24%, 0.3) 100%);
+  background: -moz-linear-gradient(90deg, hsla(185, 64%, 51%, 0.3) 0%, hsla(277, 74%, 24%, 0.3) 100%);
+  background: -webkit-linear-gradient(90deg, hsla(185, 64%, 51%, 0.3) 0%, hsla(277, 74%, 24%, 0.3) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#30C5D2", endColorstr="#471069", GradientType=1 );
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+.challengeGallery-container.desktop .challengeGallery-header::before{
+  border-radius: 5px;
+}
+.sequence-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.sequence-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 0.625rem 1.25rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+.challengeGallery-container.dark .sequence-card{
+  background-color: #282D35;
+  box-shadow: 0 3px 8px rgba(165, 128, 157, 0.3);
+}
+.challengeGallery-container.desktop .sequence-card{
+  padding: 1rem 2rem;
+}
+
+.a {
+  text-decoration: none;
+  color: rgb(127, 50, 127);
+}
+.check-go{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+}
+.check-go h2,.resting-number{
+  font-size: 1rem;
+  margin-bottom: 0;
+  text-align: center;
+  color: #662572;
+}
+
+.challengeGallery-container.dark .check-go h2,
+.challengeGallery-container.dark .resting-number{
+  color: #dcb1e4;
+  font-weight: 400;
+}
+
+.challengeGallery-container.desktop .check-go{
+  width: 20%;
+}
+.challengeGallery-container.desktop .check-go h2{
+  font-size: 1.2rem;
+}
+.challenge-favorites{
+  width: 20px;
+  height: 20px;
+  padding-top: 2px;
+}
+.challengeGallery-container.dark .challenge-favorites{
+  color: #dcb1e4;
+}
+.favorito-activo{
+  fill:#662572; 
+  width: 20px;
+  height: 20px;
+  padding-top: 2px;
+}
+.challengeGallery-container.dark .favorito-activo{
+  fill:#9843a8
+}
+
+.challengeGallery-container.desktop .challenge-favorites,.challengeGallery-container.desktop .favorito-activo{
+  width: 25px;
+  height: 25px;
+}
+.next-icon{
+  width: 20px;
+  height: 20px;
+  margin:0;
+  display: block;
+}
+
+.challenge-breathe{
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 3s ease-in-out forwards 3s;
+}
+.challenge-loading{
+  position: absolute;
+  z-index: 2;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(64, 108, 116);
+  opacity: 0;
+  animation: fadeIn 3s ease-in-out forwards; 
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0; 
+  }
+  to {
+      opacity: 1; 
+  }}
+
+
+ 
+
+ 
+ 
+
+ 
+ 
+  
+ 
+ 
+  

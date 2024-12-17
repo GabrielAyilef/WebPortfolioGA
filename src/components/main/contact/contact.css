@@ -1,0 +1,114 @@
+#contact {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   height: 85vh;
+    padding-top: 0;
+    width: 90vw;
+  }
+  #contact p{
+    color: #555555;
+  }
+  #contact.dark p{
+    color: #999999;
+  }
+  .contact-info-upper-container {
+    display: flex;
+    justify-content: center;
+    border-radius: 2rem;
+    border: #3f5078 0.1rem solid;
+    border-color: #3f5078;
+    background: (250, 250, 250);
+    margin: 2rem auto;
+    padding: 0.5rem;
+    
+  }
+  
+  .contact-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem;
+  }
+  
+  .contact-info-container p {
+    font-size: larger;
+  }
+  .icon-container-contact{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 4px 6px rgb(63, 80, 120, 0.3);
+    transition: transform 1s ease-in-out;
+  }
+  .contact-info-upper-container.visible .icon-container-contact{
+    transform: rotate(360deg); 
+  }
+  .icon-container-contact.email-icon{
+    width: 2.4rem;
+    height: 2.2rem;
+    padding: 2px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  .dark .icon-container-contact{
+    box-shadow: none;
+  }
+  .icon-container-contact img{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-icon {
+    cursor: default;
+  }
+
+  .contact-info-container a{
+    text-decoration: none;
+    color: #3f5078;
+  }
+  .dark .contact-info-container a{
+    color:#999999
+  }
+ 
+  @media screen and (max-width: 1200px) {
+    #nav .nav-links{
+      display: none;
+    }
+    
+    
+  }
+  
+  @media (max-width: 768px) {
+    #contact{
+      margin: 0 5%;
+      min-height: 90vh;
+    }
+   
+    .title {
+        font-size: 2rem;
+      }
+  
+    .subtitle {
+        font-size: 1.25rem;
+      }
+   
+    .contact-info-upper-container
+    {
+      width: 90%;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+   .contact-info-container {
+      margin: 0;
+    }
+    .contact-info-container p,
+    .nav-links li a {
+      font-size: 1rem;
+    }
+   
+  }

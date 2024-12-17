@@ -1,0 +1,296 @@
+.project-wrapper{
+    width: 100%;
+    max-height: 100vh;
+    gap: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    
+}
+
+.project-title {
+  display: flex; 
+  flex-direction: column;
+  gap: 20px;
+  color: #3f5078;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 80px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  transition: top 0.3s ease, left 0.3s ease, font-size 0.3s ease, flex-direction 0.3s ease 0.3s; 
+}
+
+.project-wrapper.desktop .project-title {
+  font-size: 2rem;
+  flex-direction: row;
+  top: 7%;
+  left: 40px;
+  text-align: start;
+}
+
+.project-wrapper.dark .project-title {
+  color: #fcdfd8;
+}
+
+.project-title.animating span {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInProject 0.8s ease forwards;
+}
+
+.project-title.animating span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.project-title.animating span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.project-title.animating span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInProject {
+  to {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
+
+.project-frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box; 
+    width: 375px;
+    height: 630px;
+    min-height: 630px;
+    border-radius: 40px;
+    position: relative;
+    background-image: url(../../../../assets/framemobile.png);
+    background-size: 100% 100%; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-color: transparent;
+   transition: width 0.3s ease, height 0.3s ease ;
+  }
+  .project-outlet{
+    width: 90%;     
+    height: 80%; 
+    border-radius: 3px;
+    overflow: hidden;
+    
+}
+
+.project-wrapper.dark .project-frame,.project-wrapper.dark.desktop .project-frame {
+    background-color: #222b40;
+}
+.desktop .project-frame {
+    width: 900px;
+    height: 500px;
+    min-height: 500px;
+    background-image: url(../../../../assets/framedesktop.png);
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-size: 100% 100%; 
+    border-radius: 30px;
+    margin-top: 50px;
+  }
+
+.project-wrapper.desktop .project-outlet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;     
+    height: 90%; 
+    border-radius: 0;
+}
+.project-wrapper-buttons{
+    display: flex;
+    gap: 2rem;
+    position: absolute;
+    z-index: 1000;
+    right: 40px;
+    top: 20px;
+}
+
+.project-wrapper-buttons button,.project-wrapper-buttons button a{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    background-color: #f2f3f8;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 4px 6px rgb(63, 80, 120, 0.3);
+    transition: transform 0.1s ease, background-color 0.3s ease;
+}
+.project-wrapper.dark .project-wrapper-buttons button a,
+.project-wrapper.dark .project-wrapper-buttons button {
+    background-color: #222b40;
+    box-shadow: none;
+}
+.project-wrapper.project-wrapper-buttons button a img,
+.project-wrapper .project-wrapper-buttons button img{
+        width: 100%;
+        height: 100%;
+        display: block;
+        padding: 5px;
+}
+.project-wrapper-buttons button:hover{
+    transform: scale(1.1); 
+}
+
+/* isMobile */
+.wrapper-outlet-mobile{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.project-outlet-mobile{
+ width: 100vw;
+  height: 100vh;
+  transform: scaleX(1);
+  transition: transform 1.5s ease;
+}
+.project-outlet-mobile.shrink{
+  transform: scaleX(0.9)
+ 
+}
+  .bubble {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #F8B940;
+    color: #222B40;
+    top: 50%;
+    left: 50%;
+    transform: translate(70%, -50%); 
+    z-index: 50;
+    padding: 20px;
+    font-size: 1.5rem;
+    transition: transform 1.5s ease; 
+  }
+  
+  .bubble.show-bubble {
+    transform: translate(-50%, -50%); 
+  }
+  .bubble button{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.3s ease;
+  }
+  .bubble button img{
+    width: 100%;
+        height: 100%;
+        display: block;
+  }
+
+
+  /* modal  */
+  .modal-project-content {
+    position: absolute;
+    z-index: 10;
+    top: 100px;
+    right:40px ;
+    width: 500px;
+    margin: 0 auto;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+  .project-wrapper.dark .modal-project-content{
+    background-color:rgb(34, 43, 64);
+    color: white;
+    box-shadow: 0 4px 8px rgba(248, 246, 246, 0.1);
+  }
+  .close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    display: block;
+    border-radius: 50%;
+    background-color: rgb(95, 117, 171,0.5);
+    padding: 5px;
+  }
+  /* .project-wrapper.dark .close{
+    background-color: rgb(95, 117, 171,0.5);
+  } */
+
+/* .project-wrapper.dark::-webkit-scrollbar {
+    width: 10px; 
+    background: #282D35; 
+  }
+  
+  .project-wrapper.dark::-webkit-scrollbar-thumb {
+    background: #555; 
+    border-radius: 10px;
+  }
+  
+  .project-wrapper.dark::-webkit-scrollbar-thumb:hover {
+    background: #333; 
+  }
+   */
+  /* Estilo para navegadores compatibles con Firefox */
+  .project-wrapper.dark {
+    scrollbar-color: #555 #1f2227; /* Thumb y track */
+    scrollbar-width: thin; /* Ancho de la barra */
+  }
+
+  @media (max-width: 768px){
+   
+    .project-wrapper-buttons{
+            gap:0.8rem;
+            right:20px
+        }
+        .project-wrapper .project-wrapper-buttons button a img,
+        .project-wrapper .project-wrapper-buttons button img{
+            width: 25px;
+            height: 25px;
+        }
+        .modal-project-content{
+          top:50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          width: 80%;
+        }
+        .project-wrapper.dark .modal-project-content{
+          background-color:rgb(34, 43, 64)
+        }
+    }
+    
