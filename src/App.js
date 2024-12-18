@@ -51,6 +51,7 @@ function App() {
                   path="/"
                   element={
                     <Main
+                      isCollapsed={isCollapsed}
                       className={
                         isCollapsed
                           ? "main-portfolio sidebar-closed"
