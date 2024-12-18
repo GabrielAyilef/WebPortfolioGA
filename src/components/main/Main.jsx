@@ -29,19 +29,3 @@ return (
 
 export default Main
 
-// return (
-//   <div className={`${className} ${darkPortfolio ? "dark" : ""} ${isMobile ? "mobile" : ""}`}>
-//     <div className={` project-wrapper-scale ${isMobile ? "mobile" : ""}`}>
-//       <Profile />
-//       <About />
-//       <div id="project">
-//         <Outlet />
-//       </div>
-//       <Contact />
-//       <Footer />
-//   </div>
-//   {isMobile && (
-//   <div className="mobile-overlay" />
-// )}
-//   </div>
-//  );
