@@ -29,3 +29,14 @@ return (
 
 export default Main
 
+// <div className="main">
+//         <div className="project-wrapper-scale" >
+//           <Profile />
+//           <About />
+//           <div id="project">
+//             <Outlet />
+//           </div>
+//           <Contact />
+//           <Footer />
+//         </div>
+//       </div>
