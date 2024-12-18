@@ -6,15 +6,18 @@ import Contact from './contact/Contact'
 import Footer from "./footer/Footer"
 import { Outlet } from "react-router-dom";
 import { useDarkMode } from './projects/Context/DarkMode'
+import { useMobile } from "./projects/Context/Mobile"
 
 
 
 function Main({ className }) {
-    const { darkPortfolio } = useDarkMode()
+  const { darkPortfolio } = useDarkMode()
+  const {isMobile} = useMobile()
     
 return (
-      <div className={`${className} ${darkPortfolio ? "dark" : ""} `}>
-        <div className="project-wrapper-scale" >
+  <div className={`${className} ${darkPortfolio ? "dark" : ""} `}>
+    {isMobile && <div className="blur-overlay"></div> }
+      <div className="project-wrapper-scale" >
           <Profile />
           <About />
           <div id="project">
