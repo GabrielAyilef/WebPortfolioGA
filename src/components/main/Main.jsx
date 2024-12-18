@@ -15,7 +15,9 @@ function Main({ className }) {
   const {isMobile} = useMobile()
     
 return (
-  <div className={`${className} ${darkPortfolio ? "dark" : ""} `}>
+  <div
+    id="main-portfolio"
+    className={`${className} ${darkPortfolio ? "dark" : ""} `}>
     {isMobile && <div className="blur-overlay"></div> }
       <div className="project-wrapper-scale" >
           <Profile />

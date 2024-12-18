@@ -83,14 +83,20 @@
     margin:0 auto;
     padding-top: 4rem;
     padding-inline:0 ;
-    pointer-events: none;
-    touch-action: none; 
+   
   }
   .main-portfolio.sidebar-closed{
     margin-left:0 ;
     width: 100vw;
     padding-bottom: 70px;
     overflow: hidden; 
+  
+  }
+  #main-portfolio{
+    pointer-events: none;
+    touch-action: none; 
+  }
+  #main-portfolio.sidebar-closed{
     pointer-events: auto;
     touch-action: auto; 
   }
@@ -102,7 +108,7 @@
     height: 100%;
     backdrop-filter: blur(4px); 
     z-index: 10; 
-    /* background-color: rgba(255, 255, 255, 0.1);  */
+  
   }
   .main-portfolio.sidebar-closed .blur-overlay {
    display: none;
