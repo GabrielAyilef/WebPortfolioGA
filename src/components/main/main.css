@@ -26,6 +26,138 @@
   padding: 0;
  
 }
+
+.main-portfolio.sidebar-closed{
+  margin-left:80px ;
+  width: calc(100vw - 80px);
+  padding-bottom: 150px;
+  overflow: visible; 
+}
+.main-portfolio.dark{
+  background-color: #222b40;
+}
+.main-portfolio.dark::before{
+  opacity: 0.2;
+}
+#project{
+  width:100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   z-index: 0;
+  min-height: 100vh;
+
+
+  /* agregado para que el viewport con el aumento se ajuste */
+  padding-top: 4vh;
+   min-height: 96vh;
+   max-height: 100vh;
+   overflow: hidden; 
+}
+
+  .project-wrapper-scale{
+  width: calc(100vw - 300px);
+  margin:0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(1);
+  transition: transform 0.5s ease;
+  transform-origin: 50% 30%;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.main-portfolio.sidebar-closed .project-wrapper-scale{
+  transform: scale(1.05);
+}
+
+
+ @media (max-width: 768px){
+
+  .main-portfolio{
+    width:100vw;
+    margin:0 auto;
+    padding-top: 4rem;
+    padding-inline:0 ;
+    pointer-events: none;
+  }
+  .main-portfolio.sidebar-closed{
+    margin-left:0 ;
+    width: 100vw;
+    padding-bottom: 70px;
+    overflow: hidden; 
+    pointer-events: auto;
+  }
+  
+
+  .main-portfolio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    pointer-events: auto;
+    background: none;
+  }
+  .main-portfolio.sidebar-closed::before{
+      display: none;
+  }
+  .main-portfolio.dark::before {
+  opacity: 1;
+  }
+  .project-wrapper-scale{
+    width: 100vw;
+    transform: none;
+  
+  }
+  .main-portfolio.sidebar-closed .project-wrapper-scale{
+    transform:none;
+  }
+  
+  #project{
+    min-height: none;
+    overflow: visible;
+    max-height: none;
+    padding-top: 0;
+ 
+  }
+
+} 
+
+/* .main-portfolio{
+  margin-left: 270px;
+  width: calc(100vw - 240px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  transition: margin-left 0.3s ease, width 0.3s ease, background-color 0.5s ease;
+  background-color: #f2f3f8;
+  position: relative;
+  overflow: hidden; 
+} 
+.main-portfolio::before {
+  content: "";
+  background: url('../../assets/bgmain.png');
+  background-size: cover;
+  opacity: 0.1;
+  background-repeat: no-repeat;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
+  z-index: 0; 
+  padding: 0;
+ 
+}
 .main-portfolio.mobile{
   width:100vw;
   margin:0 auto;
@@ -63,7 +195,7 @@
 
 
   /* agregado para que el viewport con el aumento se ajuste */
-  padding-top: 4vh;
+  /* padding-top: 4vh;
    min-height: 96vh;
    max-height: 100vh;
    overflow: hidden; 
@@ -99,25 +231,11 @@
 .main-portfolio.sidebar-closed .project-wrapper-scale.mobile{
   transform: none;
 }
-/* 
-  .main-portfolio.mobile::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(4px);
-    z-index: 100;
-    pointer-events: auto;
-    background: none;
-  } */
-  .main-portfolio.sidebar-closed.mobile::before{
+
+.main-portfolio.sidebar-closed.mobile::before{
       display: none;
   }
-  /* .main-portfolio.dark.mobile::before {
-  opacity: 1;
-  } */
+
  
 
   .mobile-overlay {
@@ -129,18 +247,16 @@
     height: 100%;
     backdrop-filter: blur(4px);
     z-index: 100;
-    pointer-events: auto; /* Esto permitirá los clics en la overlay */
+    pointer-events: auto; 
   }
   
   .main-portfolio.mobile .mobile-overlay {
-    display: block; /* Muestra la capa de overlay */
+    display: block;
   }
   
   .main-portfolio.sidebar-closed.mobile .mobile-overlay {
-    display: none; /* Oculta la overlay cuando la sidebar está cerrada */
-  }
+    display: none; 
+  } */
 
 
-
-
-
+ 
