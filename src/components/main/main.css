@@ -92,8 +92,8 @@
     width: 100vw;
     padding-bottom: 70px;
     overflow: hidden; 
-    pointer-events: none;
-    touch-action: none; 
+    pointer-events: auto;
+    touch-action: auto; 
   }
   
 
@@ -106,7 +106,7 @@
     height: 100%;
     backdrop-filter: blur(4px);
     z-index: 100;
-    /* pointer-events: none; */
+    pointer-events: auto;
     background: none;
   }
   .main-portfolio.sidebar-closed::before{
