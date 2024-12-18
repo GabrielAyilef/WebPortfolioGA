@@ -67,6 +67,7 @@
       padding: 1rem;
       border-radius: 2rem;
       border: #3f5078 0.1rem solid;
+      pointer-events: none;
   }
 
   .social-container{
