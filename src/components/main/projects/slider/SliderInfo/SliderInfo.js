@@ -4,7 +4,7 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { FaMusic } from "react-icons/fa";
 import { useAudio } from "../../Context/MusicPlayer";
 import info from "../../../../../assets/info.png";
-import Breathe from "../../Breathe/Breather/Breathe";
+import BreatheDelay from "../../Breathe/breathedelay/BreatheDelay";
 import { useDarkMode } from "../../Context/DarkMode";
 import "./sliderInfo.css";
 import { useLayout } from "../../Context/Layout";
@@ -26,8 +26,16 @@ function SliderInfo() {
     } else {
       async function fetchAsanas() {
         try {
-          const response = await fetch(
-            "https://yoga-api-nzy4.onrender.com/v1/poses"
+          // const response = await fetch(
+          //   "https://yoga-api-nzy4.onrender.com/v1/poses"
+          // );
+
+          const response = await new Promise((resolve) =>
+            setTimeout(
+              () =>
+                resolve(fetch("https://yoga-api-nzy4.onrender.com/v1/poses")),
+              20000 // 30 segundos de retraso
+            )
           );
           const data = await response.json();
 
@@ -60,12 +68,7 @@ function SliderInfo() {
   }, []);
 
   if (!asanaDetails || asanaDetails.length === 0) {
-    return (
-      <div>
-        <h1 className="sliderInfo-loading">Loading...</h1>
-        <Breathe className="breathe" delay={4000} />
-      </div>
-    );
+    return <BreatheDelay />;
   }
 
   return (

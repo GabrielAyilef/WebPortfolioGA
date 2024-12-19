@@ -117,28 +117,7 @@
     transform: scale(1.5);
     transition: transform 0.2s ease-in-out; 
   }
-  .pose-loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: hsla(185, 64%, 51%, 1);
-    background: linear-gradient(90deg, hsla(185, 64%, 51%, 0.3) 0%, hsla(277, 74%, 24%, 0.3) 100%);
-    background: -moz-linear-gradient(90deg, hsla(185, 64%, 51%, 0.3) 0%, hsla(277, 74%, 24%, 0.3) 100%);
-    background: -webkit-linear-gradient(90deg, hsla(185, 64%, 51%, 0.3) 0%, hsla(277, 74%, 24%, 0.3) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#30C5D2", endColorstr="#471069", GradientType=1);
-    z-index: 0;
-    color: white;
-    font-size:clamp(1,5rem, 3vw, 2rem);
-    font-weight: bold;
-    pointer-events: none;
-    
-  }
-  
+
   
   .container-posedetail.desktop .back-to-container svg{
       width: 40px;

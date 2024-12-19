@@ -6,9 +6,9 @@ import arrow from "../../../../../assets/right-arrow.png";
 import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import cup from "../../../../../assets/cup-of-tea.png";
 import cupdark from "../../../../../assets/teadark.png";
-import Breathe from "../../Breathe/Breather/Breathe";
 import { useDarkMode } from "../../Context/DarkMode";
 import { useLayout } from "../../Context/Layout";
+import BreatheDelay from "../../Breathe/breathedelay/BreatheDelay";
 
 function ChallengeGallery() {
   const [allPoses, setAllPoses] = useState([]);
@@ -23,7 +23,18 @@ function ChallengeGallery() {
       try {
         const [beginnerResponse, intermediateResponse, categoryResponse] =
           await Promise.all([
-            fetch("https://yoga-api-nzy4.onrender.com/v1/poses?level=beginner"),
+            // fetch("https://yoga-api-nzy4.onrender.com/v1/poses?level=beginner"),
+            new Promise((resolve) =>
+              setTimeout(
+                () =>
+                  resolve(
+                    fetch(
+                      "https://yoga-api-nzy4.onrender.com/v1/poses?level=beginner"
+                    )
+                  ),
+                30000
+              )
+            ),
             fetch(
               "https://yoga-api-nzy4.onrender.com/v1/poses?level=intermediate"
             ),
@@ -143,12 +154,7 @@ function ChallengeGallery() {
   }
 
   if (!sequences || sequences.length === 0) {
-    return (
-      <div>
-        <h1 className="challenge-loading">Loading...</h1>
-        <Breathe className="challenge-breathe" delay={4000} />
-      </div>
-    );
+    return <BreatheDelay />;
   }
 
   return (

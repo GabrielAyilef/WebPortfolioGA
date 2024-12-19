@@ -3,7 +3,7 @@ import { useParams, useLocation, useNavigate } from "react-router-dom";
 import "./poseDetail.css";
 import arrowpurple from "../../../../../assets/arrowpurple.png";
 import { useDarkMode } from "../../Context/DarkMode";
-import Breathe from "../../Breathe/Breather/Breathe";
+import BreatheDelay from "../../Breathe/breathedelay/BreatheDelay";
 import { useLayout } from "../../Context/Layout";
 
 function PoseDetail() {
@@ -22,8 +22,19 @@ function PoseDetail() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(
-          `https://yoga-api-nzy4.onrender.com/v1/poses?name=${name}`
+        // const response = await fetch(
+        //   `https://yoga-api-nzy4.onrender.com/v1/poses?name=${name}`
+        // );
+        const response = await new Promise((resolve) =>
+          setTimeout(
+            () =>
+              resolve(
+                fetch(
+                  "https://yoga-api-nzy4.onrender.com/v1/poses?name=${name}"
+                )
+              ),
+            5000 // 30 segundos de retraso
+          )
         );
         const data = await response.json();
 
@@ -45,12 +56,7 @@ function PoseDetail() {
   }, []);
 
   if (!asana) {
-    return (
-      <div>
-        <h1 className="poses-loading">Loading...</h1>
-        <Breathe className="breathe" delay={4000} />
-      </div>
-    );
+    return <BreatheDelay />;
   }
 
   return (

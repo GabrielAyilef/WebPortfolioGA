@@ -69,9 +69,12 @@
     margin: 20px auto;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     box-sizing: border-box; 
-    width: 375px;
-    height: 630px;
-    min-height: 630px;
+    width: 25vw;
+    height: 90vh;
+    aspect-ratio: 5/8;
+    /* max-width: 375px;
+    max-height: 630px;
+    min-height: 69.15vh; */
     border-radius: 40px;
     position: relative;
     background-image: url(../../../../assets/framemobile.png);
@@ -93,9 +96,12 @@
     background-color: #222b40;
 }
 .desktop .project-frame {
-    width: 900px;
-    height: 500px;
-    min-height: 500px;
+  width: 60vw;
+  height: 70vh;
+  aspect-ratio: 9/5;
+    /* max-width: 900px;
+    max-height: 500px;
+    min-height: 54.8vh; */
     background-image: url(../../../../assets/framedesktop.png);
     background-size: cover; 
     background-repeat: no-repeat; 

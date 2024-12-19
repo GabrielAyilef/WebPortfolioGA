@@ -6,7 +6,7 @@
   animation: fadeIn 1s forwards;
 }
 .challengeGallery-container.desktop{
-  width: 600px;
+  width: 60%;
   margin-inline: auto;
   /* margin-top: 90px; */
   padding-block: 0;
@@ -164,21 +164,7 @@
   display: block;
 }
 
-.challenge-breathe{
-  position: relative;
-  opacity: 0;
-  animation: fadeIn 3s ease-in-out forwards 3s;
-}
-.challenge-loading{
-  position: absolute;
-  z-index: 2;
-  top: 12%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgb(64, 108, 116);
-  opacity: 0;
-  animation: fadeIn 3s ease-in-out forwards; 
-}
+
 
 @keyframes fadeIn {
   from {

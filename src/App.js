@@ -20,6 +20,7 @@ import { useLayout } from "./components/main/projects/Context/Layout";
 import { useMobile } from "./components/main/projects/Context/Mobile";
 import ProjectWrapper from "./components/main/projects/projectWrapper/ProjectWrapper";
 import SharedLayout from "./components/main/projects/sharedLayout/SharedLayout";
+console.log(window.innerWidth, window.innerHeight);
 
 function App() {
   const { isMobile } = useMobile();

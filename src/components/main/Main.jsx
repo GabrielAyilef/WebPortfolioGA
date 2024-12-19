@@ -16,7 +16,7 @@ function Main({ className, isCollapsed }) {
   const { isMobile } = useMobile()
   const [pointerEvents, setPointerEvents] = useState("auto")
   
-  console.log("is Collapsed is " + isCollapsed + " so pointer is " + pointerEvents)
+  
   useEffect(() => {
     if (isMobile) {  
       const timeout = setTimeout(() => {
