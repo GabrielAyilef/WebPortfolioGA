@@ -26,17 +26,10 @@ function SliderInfo() {
     } else {
       async function fetchAsanas() {
         try {
-          // const response = await fetch(
-          //   "https://yoga-api-nzy4.onrender.com/v1/poses"
-          // );
-
-          const response = await new Promise((resolve) =>
-            setTimeout(
-              () =>
-                resolve(fetch("https://yoga-api-nzy4.onrender.com/v1/poses")),
-              20000 // 30 segundos de retraso
-            )
+          const response = await fetch(
+            "https://yoga-api-nzy4.onrender.com/v1/poses"
           );
+
           const data = await response.json();
 
           let filteredAsanas;

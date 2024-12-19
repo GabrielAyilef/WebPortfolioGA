@@ -23,18 +23,8 @@ function ChallengeGallery() {
       try {
         const [beginnerResponse, intermediateResponse, categoryResponse] =
           await Promise.all([
-            // fetch("https://yoga-api-nzy4.onrender.com/v1/poses?level=beginner"),
-            new Promise((resolve) =>
-              setTimeout(
-                () =>
-                  resolve(
-                    fetch(
-                      "https://yoga-api-nzy4.onrender.com/v1/poses?level=beginner"
-                    )
-                  ),
-                30000
-              )
-            ),
+            fetch("https://yoga-api-nzy4.onrender.com/v1/poses?level=beginner"),
+
             fetch(
               "https://yoga-api-nzy4.onrender.com/v1/poses?level=intermediate"
             ),

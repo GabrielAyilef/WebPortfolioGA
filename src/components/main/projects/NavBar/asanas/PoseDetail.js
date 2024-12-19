@@ -22,20 +22,10 @@ function PoseDetail() {
   useEffect(() => {
     async function fetchData() {
       try {
-        // const response = await fetch(
-        //   `https://yoga-api-nzy4.onrender.com/v1/poses?name=${name}`
-        // );
-        const response = await new Promise((resolve) =>
-          setTimeout(
-            () =>
-              resolve(
-                fetch(
-                  "https://yoga-api-nzy4.onrender.com/v1/poses?name=${name}"
-                )
-              ),
-            5000 // 30 segundos de retraso
-          )
+        const response = await fetch(
+          `https://yoga-api-nzy4.onrender.com/v1/poses?name=${name}`
         );
+
         const data = await response.json();
 
         setAsana(data);
