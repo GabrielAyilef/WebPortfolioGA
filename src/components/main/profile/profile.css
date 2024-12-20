@@ -158,6 +158,9 @@
   .subtitle {
       font-size: 2rem;
     }
+    .btn-container button{
+      width: 9rem;
+    }
  }
   @media (max-width: 768px){
     #profile { 
@@ -180,6 +183,9 @@
 
   .subtitle {
       font-size: 1.25rem;
+    }
+    .btn-container button{
+      width: 8rem;
     }
  }
    
