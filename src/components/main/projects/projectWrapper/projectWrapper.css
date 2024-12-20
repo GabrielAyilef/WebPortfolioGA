@@ -281,10 +281,12 @@
     .project-frame{
       width: 50vw;
       height:80vh ;
+      max-height: 800px;
     }
     .desktop .project-frame{
       width: 90vw;
       height: 40vh;
+     
     }
     .project-title{
       font-size: 2rem;
