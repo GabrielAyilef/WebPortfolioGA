@@ -98,3 +98,7 @@
     top: calc(100% + 30px); 
   }
 
+  .headerbar-container.desktop .icon-logo-home{
+    width: 9%;
+  }
+
