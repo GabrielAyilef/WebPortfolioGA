@@ -134,8 +134,33 @@
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
   }
-  @media (max-width: 768px){
+  @media (max-width: 1024px){
+ 
+
   #profile {
+    min-height: 96vh;
+    height: 83vh;
+    margin: 0 5%;
+    display: block;
+    padding-top: 8rem;
+  }
+  .profile-pic{
+    width: 300px;
+    height:300px;
+    justify-content: center;
+    margin: 0 auto 2rem;
+
+    }
+  .title {
+      font-size: 3rem;
+    }
+
+  .subtitle {
+      font-size: 2rem;
+    }
+ }
+  @media (max-width: 768px){
+    #profile { 
     min-height: 96vh;
     height: 83vh;
     margin: 0 5%;
@@ -157,3 +182,4 @@
       font-size: 1.25rem;
     }
  }
+   

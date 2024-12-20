@@ -277,7 +277,23 @@
     scrollbar-color: #555 #1f2227; /* Thumb y track */
     scrollbar-width: thin; /* Ancho de la barra */
   }
-
+  @media (max-width: 1024px){
+    .project-frame{
+      width: 50vw;
+      height:80vh ;
+    }
+    .desktop .project-frame{
+      width: 90vw;
+      height: 40vh;
+    }
+    .project-title{
+      font-size: 2rem;
+      flex-direction: row;
+      top: 45px;
+      left: 40px;
+      text-align: start;
+    }
+  }
   @media (max-width: 768px){
    
     .project-wrapper-buttons{

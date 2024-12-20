@@ -126,12 +126,34 @@
     transform: scale(1.2); 
   }
  
+  @media (max-width: 1024px){
+    .home{
+      width: 90%;
+      padding: 2rem 0 ;
+    }
+    .project-text{
+      flex: none;
+      width: 100%;
+      padding: 20px;
+    }
+    .project-description{
+      font-size: 1rem;
+    }
+    .project-container{
+      flex: 1 1 40%; 
+      margin-bottom: 3rem;
+    }
+ 
+  }
   @media (max-width: 768px){
     .home{
+      width: 100%;
       padding: 2rem 1.5rem;
     }
     .project-text{
       padding: 0;
+      flex: 2 1 50%;
+      width: auto;
     }
     .project-description{
       font-size: 1rem;
@@ -139,6 +161,8 @@
     .project-container{
         width: 80% ;
       height: auto;
+      flex: 1 1 25%; 
+      margin-bottom: 0;
     }
     .buttons-layout{
       display: none;
