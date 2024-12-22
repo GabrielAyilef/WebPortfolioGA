@@ -298,8 +298,8 @@ padding-left: 45px;
     @media (max-width: 768px){
         .sidebar{
             background-color: rgb(77, 98, 147, 0.95);
-            height: 100svh;
-            min-height: 100svh;
+            height: 100dvh;
+            min-height: 100dvh;
         }
         .sidebar.dark{
            background-color: rgb(70, 89, 134, 0.95);
