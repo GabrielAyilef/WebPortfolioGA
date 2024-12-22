@@ -16,6 +16,7 @@ html {
 .App {
  display: flex;
  width: 100vw;
+ height: 100vh;
 }
 .App.dark-portfolio{
   background-color: #222b40;
