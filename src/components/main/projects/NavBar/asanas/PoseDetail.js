@@ -5,6 +5,7 @@ import arrowpurple from "../../../../../assets/arrowpurple.png";
 import { useDarkMode } from "../../Context/DarkMode";
 import BreatheDelay from "../../Breathe/breathedelay/BreatheDelay";
 import { useLayout } from "../../Context/Layout";
+import useScrollOnMount from "../../../../../utilities/useScrollOnMount";
 
 function PoseDetail() {
   const [asana, setAsana] = useState(null);
@@ -15,6 +16,7 @@ function PoseDetail() {
   const { darkProject } = useDarkMode();
   const { desktop } = useLayout();
 
+  useScrollOnMount();
   function goBack() {
     navigate(-1);
   }

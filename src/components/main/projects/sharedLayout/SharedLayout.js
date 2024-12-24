@@ -21,6 +21,7 @@ function SharedLayout() {
 
   return (
     <div
+      id="wrapper"
       className={`sharedLayout ${darkProject ? "dark" : ""} ${
         desktop ? "desktop" : ""
       }`}

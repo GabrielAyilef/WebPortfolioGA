@@ -43,7 +43,7 @@ const projects = [
     paths: [`/layout/breathe`],
     type: "layout",
     legend:
-      "Initially added as a fallback in case of potential API response delays in other sections, this React project was included in the practice section of the app with a breathing exercise tool offering visual and textual guidance. It is now expanding to include customizable breathing options.",
+      "Initially added as a fallback in case of potential API response delays, this breathing exercise tool was integrated into the practice section of the app offering visual and textual guidance. It is now expanding to include customizable breathing options.",
     icon: breathicon,
   },
   {

@@ -8,6 +8,7 @@ import info from "../../../../../assets/info.png";
 import { useAudio } from "../../Context/MusicPlayer";
 import { useDarkMode } from "../../Context/DarkMode";
 import { useLayout } from "../../Context/Layout";
+import useScrollOnMount from "../../../../../utilities/useScrollOnMount";
 
 function ChallengeDay() {
   const { darkProject } = useDarkMode();
@@ -16,6 +17,8 @@ function ChallengeDay() {
   const navigate = useNavigate();
   const { isPlaying, stopAudio, playAudio } = useAudio();
   const { desktop } = useLayout();
+
+  useScrollOnMount();
 
   function goBack() {
     navigate(-1);

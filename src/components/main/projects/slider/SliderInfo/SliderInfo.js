@@ -8,6 +8,7 @@ import BreatheDelay from "../../Breathe/breathedelay/BreatheDelay";
 import { useDarkMode } from "../../Context/DarkMode";
 import "./sliderInfo.css";
 import { useLayout } from "../../Context/Layout";
+import useScrollOnMount from "../../../../../utilities/useScrollOnMount";
 
 function SliderInfo() {
   const { darkProject } = useDarkMode();
@@ -18,6 +19,8 @@ function SliderInfo() {
   const [asanaDetails, setAsanaDetails] = useState([]);
   const { isPlaying, stopAudio, playAudio } = useAudio();
   const { desktop } = useLayout();
+
+  useScrollOnMount();
 
   useEffect(() => {
     const storedAsanas = localStorage.getItem(`orderedAsanas_${index}`);
