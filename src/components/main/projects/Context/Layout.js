@@ -50,7 +50,7 @@ const projects = [
     name: "yogaapp",
     title: "Full App",
     component: <Yogaapp />,
-    url: "https://yogagabrielapp.netlify.app",
+    url: "https://yogaapp24.netlify.app/",
     type: "link",
     legend: "Your device",
     icon: yogaapp,
