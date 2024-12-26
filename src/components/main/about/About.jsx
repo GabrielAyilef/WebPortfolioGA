@@ -48,8 +48,8 @@ function About() {
         <div className= "text-container" ref={textRef}>
             <p className='text-container-paragraph'>
               After years in the yoga scene, I’m making the move to frontend development, particularly excited by 
-              the ability to <span>bring ideas to life</span> through interactive interfaces. Now, attention to detail, {} 
-              <span> creativity</span>, and adaptability are skills focused on <span>user experiences</span>. Frontend draws me because of the <span>endless 
+              the ability to <span>bring ideas to life</span> through interactive interfaces. Now, abilities such as attention to detail, {} 
+              <span> creativity</span>, and adaptability shift my focus towards <span>user experiences</span>. Frontend draws me because of the <span>endless 
               possibilities</span> and tools available to navigate challenges and create effective solutions.
             </p>
           </div>
