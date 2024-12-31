@@ -133,8 +133,8 @@
       width:90% ;
     }
     .container-posedetail.desktop .container-posedetail-info img{
-      width: 300px; 
-      height: 300px;
+      width: 50%; 
+      height: 50%;
      
     }
     .container-posedetail.desktop .container-posedetail h2{
@@ -168,4 +168,4 @@
         margin: auto 10px;
         
       }
-  
+   
