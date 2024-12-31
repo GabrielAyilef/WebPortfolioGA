@@ -20,32 +20,89 @@ function PoseDetail() {
   function goBack() {
     navigate(-1);
   }
-
   useEffect(() => {
-    async function fetchData() {
+    async function fetchAllAsanas() {
       try {
         const response = await fetch(
-          `https://yoga-api-nzy4.onrender.com/v1/poses?name=${name}`
+          "https://yoga-api-nzy4.onrender.com/v1/poses"
         );
-
         const data = await response.json();
 
-        setAsana(data);
+        localStorage.setItem("asanas", JSON.stringify(data));
+        return data;
       } catch (error) {
-        console.error("Error getting asana data:", error);
+        console.error("Error fetching all asanas:", error);
+        return [];
       }
     }
-    const localStorageAsana = JSON.parse(localStorage.getItem("asanas"));
 
-    if (localStorageAsana) {
-      const filteredAsana = localStorageAsana.find(
-        (item) => item.english_name === name
-      );
-      setAsana(filteredAsana);
-    } else {
-      fetchData();
+    async function fetchAsana() {
+      const localStorageAsanas = JSON.parse(localStorage.getItem("asanas"));
+
+      if (localStorageAsanas) {
+        const filteredAsana = localStorageAsanas.find(
+          (item) => item.english_name === name
+        );
+        setAsana(filteredAsana);
+      } else {
+        const allAsanas = await fetchAllAsanas();
+        const filteredAsana = allAsanas.find(
+          (item) => item.english_name === name
+        );
+        setAsana(filteredAsana);
+      }
     }
-  }, []);
+
+    fetchAsana();
+  }, [name]);
+
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       const response = await fetch(
+  //         "https://yoga-api-nzy4.onrender.com/v1/poses"
+  //       );
+  //       const data = await response.json();
+
+  //       setAsanas(data);
+
+  //       localStorage.setItem("asanas", JSON.stringify(data));
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   }
+  //   const localStorageData = JSON.parse(localStorage.getItem("asanas"));
+  //   if (localStorageData) {
+  //     setAsanas(localStorageData);
+  //   } else {
+  //     fetchData();
+  //   }
+  // }, []);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       const response = await fetch(
+  //         `https://yoga-api-nzy4.onrender.com/v1/poses?name=${name}`
+  //       );
+
+  //       const data = await response.json();
+
+  //       setAsana(data);
+  //     } catch (error) {
+  //       console.error("Error getting asana data:", error);
+  //     }
+  //   }
+  //   const localStorageAsana = JSON.parse(localStorage.getItem("asanas"));
+
+  //   if (localStorageAsana) {
+  //     const filteredAsana = localStorageAsana.find(
+  //       (item) => item.english_name === name
+  //     );
+  //     setAsana(filteredAsana);
+  //   } else {
+  //     fetchData();
+  //   }
+  // }, []);
 
   if (!asana) {
     return <BreatheDelay />;

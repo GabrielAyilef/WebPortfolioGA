@@ -18,7 +18,7 @@ const projects = [
     paths: [`/layout/challengeGallery`, `/layout/favorites`],
     type: "layout",
     legend:
-      "A React Router 6 project designed to create a 30-day yoga practice plan. It features alternating rest days and allows users to save their favorite practice days for quick access. The app retrieves information from an API and uses custom logic to randomly select poses from hardcoded, categorized groups.",
+      "This project is designed to create a 30-day yoga practice plan. It saves the user's favorite days on their device, allowing access later. The app retrieves information from a yoga API, which includes different categories of poses. Using this data, custom logic is applied to generate the practice sequences, randomly selecting poses from each category for different days. The project is built with React Router 6.",
     icon: challenge,
   },
 
@@ -31,7 +31,7 @@ const projects = [
     paths: [`/layout/slider`, `/layout/poses`],
     type: "layout",
     legend:
-      "A React Router 6 project featuring 5 special yoga sequences. Asanas are imported from an API, and each sequence provides access to posture details before starting the practice, with a built-in timer. In the original app, the home slider offers quick access to each sequence.",
+      "This is a guided yoga practice tool offering 5 thematic sessions, with information retrieved from an API. Before the session begins, the user can preview the sequence and access detailed descriptions of each pose. The practice flows through each pose, guided by timers. This project is designed with React Router 6",
     icon: sequences,
   },
   {
@@ -43,7 +43,7 @@ const projects = [
     paths: [`/layout/breathe`],
     type: "layout",
     legend:
-      "Initially added as a fallback in case of potential API response delays, this breathing exercise tool was integrated into the practice section of the app offering visual and textual guidance. It is now expanding to include customizable breathing options.",
+      "Initially added as a fallback in case of potential API response delays, this breathing exercise tool was integrated into the practice section of the app offering visual and textual guidance. The project is now expanding to include customizable breathing options.",
     icon: breathicon,
   },
   {
