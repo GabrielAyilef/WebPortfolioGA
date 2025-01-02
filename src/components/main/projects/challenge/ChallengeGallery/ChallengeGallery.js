@@ -155,7 +155,7 @@ function ChallengeGallery() {
     >
       <div className="challengeGallery-header">
         <h1>
-          30 <span className="highlight">Yoga Days</span> Challenge
+          30-Day <span className="highlight">Yoga</span> Challenge
         </h1>
         <img src={pic} alt="Challenge Day Pic" />
         <p>Let's experience the benefits of consistent practice</p>
