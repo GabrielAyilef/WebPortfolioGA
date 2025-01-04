@@ -114,17 +114,41 @@ function NavBar({ handleModal }) {
           {isOpenInfo && (
             <div ref={menuInfoRef} className="info-dropdown">
               <ul>
-                <Link to="/layout/favorites">Favorites</Link>
-
-                <li className="link-shrink" onClick={handleModal}>
-                  Poses
+                <li>
+                  <Link to="/layout/favorites">Favorites</Link>
                 </li>
-                <li className="link-shrink" onClick={handleModal}>
-                  Program
+                <li className="link-shrink">
+                  <Link
+                    to=""
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleModal();
+                    }}
+                  >
+                    Poses
+                  </Link>
                 </li>
-                <li className="link-shrink" onClick={handleModal}>
-                  {" "}
-                  App Info
+                <li className="link-shrink">
+                  <Link
+                    to=""
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleModal();
+                    }}
+                  >
+                    Program
+                  </Link>
+                </li>
+                <li className="link-shrink">
+                  <Link
+                    to=""
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleModal();
+                    }}
+                  >
+                    App Info
+                  </Link>
                 </li>
               </ul>
             </div>

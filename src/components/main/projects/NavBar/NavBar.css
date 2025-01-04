@@ -68,6 +68,8 @@
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(77, 21, 71, 0.3);
+  height: auto;
+  max-height: auto;
 }
 .NavBar.dark .practice-dropdown,
 .NavBar.dark .info-dropdown{
@@ -82,13 +84,6 @@
 }
 
 
-.info-dropdown ul li{
-  padding-left: 2rem;
-  padding-block: 0.5rem;
-  cursor: pointer;
-  display: block;
-  font-size: 0.8rem;
-}
 
 .practice-dropdown ul li a,
 .info-dropdown ul li a{
@@ -133,11 +128,13 @@ background-color: #3f3f58;
  
   .NavBar.desktop .info-dropdown{
     top: calc(100% + 10px);
-    height: 165px;
+    height: 130px;
+    
   }
   .NavBar.desktop .practice-dropdown{
   top: calc(100% + 10px);
-  height: 120px;
+  height: 100px;
+ 
 }
 .NavBar.desktop .icon-home{
   display: none;
