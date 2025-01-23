@@ -54,16 +54,21 @@ function Home() {
         <h1 className="title">Yoga App Project</h1>
         {isMobile ? (
           <p className="project-description ">
+            The app allows the user to choose among 3 ways to practice whenever
+            and wherever they want, whether diving into a 30-day challenge,
+            practicing specific sequences, or guided breathing.<br></br>
             You can explore <span> 3 different demo sections</span> right here,
             or access the <span>Full App</span> on your device for the complete
             experience.
           </p>
         ) : (
           <p className="project-description ">
-            {" "}
-            You can explore <span>3 different demo sections</span> right here,
-            in both mobile and desktop modes, or access the{" "}
-            <span>Full App</span> on your device for the complete experience.
+            The app allows the user to choose among 3 ways to practice whenever
+            and wherever they want, whether diving into a 30-day challenge,
+            practicing specific sequences, or guided breathing.<br></br>{" "}
+            <br></br>You can explore <span>3 demo sections</span> right here, in
+            both mobile and desktop modes, or access the <span>Full App</span>{" "}
+            on your device for the complete experience.
           </p>
         )}
       </div>
