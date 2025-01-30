@@ -34,9 +34,20 @@ function Profile() {
     }, []);
   
 
-  function handleDownloadCV(){
-    window.open(resume, "_blank");
-  };
+    function handleDownloadCV() {
+      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    
+      if (isSafari) {
+        const link = document.createElement("a");
+        link.href = resume;
+        link.setAttribute("download", "resume.pdf");
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else {
+        window.open(resume, "_blank");
+      }
+    }
 
   function handleNavigateContact() {
     window.location.href = "./#contact";
