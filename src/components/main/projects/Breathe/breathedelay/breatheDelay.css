@@ -4,9 +4,9 @@
     width: 100%;
   height: 100%;
   background-image: url('../../../../../assets/breathe.JPG');
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
-  /* background-position: center; */
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
   /* padding-bottom:140px */
   }
   .breath-delay::before {

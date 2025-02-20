@@ -172,8 +172,18 @@
   transition: transform 1.5s ease;
 }
 .project-outlet-mobile.shrink{
-  transform: scaleX(0.9)
- 
+  transform: scaleX(0.9);
+}
+.project-outlet-mobile.shrink::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #222b40;
+  z-index: 1;
+  transition: background-color 1.5s ease;
 }
   .bubble {
     width: 250px;
